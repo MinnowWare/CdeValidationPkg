@@ -63,6 +63,6 @@ int main() {
             ;
 
     }
-    CDEMOFINE((MFNBAR(1) "."));
+    CDEMOFINE((MFNBAR(1) "\n"));
 
 }
