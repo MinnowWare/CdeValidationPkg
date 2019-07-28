@@ -233,10 +233,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="clockPei.inf" />
-    <None Include="clockPei.uni" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\CDE.h" />
+    <ClInclude Include="..\..\..\CdePkg\Include\CDE.h" />
+    <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="clock.c" />

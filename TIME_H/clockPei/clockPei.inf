@@ -15,7 +15,6 @@
 
 [Sources]
 	clock.c
-	clockPei.uni
 
 [Packages]
 	MdePkg/MdePkg.dec
@@ -39,5 +38,3 @@
 
 [Pcd]
 	gCdePkgTokenSpaceGuid.CdeDefaultCommandLine		## CONSUMES
-	gCdePkgTokenSpaceGuid.CdeWelcomePeiCommandLine0	## CONSUMES
-	gCdePkgTokenSpaceGuid.CdeWelcomePeiCommandLine1	## CONSUMES

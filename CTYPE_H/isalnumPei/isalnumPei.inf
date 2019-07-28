@@ -1,11 +1,11 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = clockDxe
-  MODULE_UNI_FILE                = clockDxe.uni
-  FILE_GUID                      = CDE000FF-FBBA-4AA6-B1C2-9701038905B2
-  MODULE_TYPE                    = DXE_DRIVER
+  BASE_NAME                      = isalnumPei
+  MODULE_UNI_FILE                = isalnumPei.uni
+  FILE_GUID                      = CDE000FF-6EFF-485A-9F7B-890B47D41F2D
+  MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = _MainEntryPointDxe
+  ENTRY_POINT                    = _MainEntryPointPei
 
 #
 # The following information is for reference only and not required by the build tools.
@@ -14,16 +14,16 @@
 #
 
 [Sources]
-	clock.c
+	isalnum.c
 
 [Packages]
 	MdePkg/MdePkg.dec
 	CdePkg/CdePkg.dec
 
 [LibraryClasses]
+	PeimEntryPoint
 	CdeLib
-	UefiLib
-	UefiDriverEntryPoint
+
 
 [Guids]
 
@@ -32,7 +32,9 @@
 [Pcd]
 
 [Depex]
-	gCdeDxeProtocolGuid
+    gCdePeiProtocolGuid
+
+[UserExtensions.TianoCore."ExtraFiles"]
 
 [Pcd]
 	gCdePkgTokenSpaceGuid.CdeDefaultCommandLine		## CONSUMES

@@ -15,9 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="clockDxe.inf" />
+    <None Include="isalnumPei.inf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\CdePkg\Include\VS2017\ctype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -26,7 +29,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="clock.c">
+    <ClCompile Include="isalnum.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

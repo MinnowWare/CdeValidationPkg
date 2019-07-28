@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{3f362868-6d64-430a-a061-6cefb4c14718}</ProjectGuid>
+    <ProjectGuid>{4a79c7e3-9827-4302-85d6-fd04427c4bf7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>clockDxe</RootNamespace>
+    <RootNamespace>ispunctDxe</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -232,14 +232,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="clockDxe.inf" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\..\CdePkg\Include\CDE.h" />
     <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h" />
+    <ClInclude Include="..\..\..\CdePkg\Include\VS2017\ctype.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="clock.c" />
+    <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.inf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,8 @@
 # CdeValidationPkg
 
+### 20190728
+* add all <em>CTYPE.H()</em> - functions to DXE post phase
+
 ### 20190727
 * add <em>clockPei()</em>
 

@@ -1,8 +1,7 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = clockDxe
-  MODULE_UNI_FILE                = clockDxe.uni
-  FILE_GUID                      = CDE000FF-FBBA-4AA6-B1C2-9701038905B2
+  BASE_NAME                      = isupperDxe
+  FILE_GUID                      = CDE000FF-BC34-4555-9287-ECD1AA41CBE7
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = _MainEntryPointDxe
@@ -14,7 +13,7 @@
 #
 
 [Sources]
-	clock.c
+	main.c
 
 [Packages]
 	MdePkg/MdePkg.dec
@@ -24,6 +23,8 @@
 	CdeLib
 	UefiLib
 	UefiDriverEntryPoint
+#	PcdLib
+
 
 [Guids]
 

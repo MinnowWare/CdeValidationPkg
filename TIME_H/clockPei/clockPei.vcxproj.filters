@@ -16,10 +16,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="clockPei.inf" />
-    <None Include="clockPei.uni" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\CDE.h">
+    <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\CdePkg\Include\CDE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
