@@ -12,10 +12,10 @@
     THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
     WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-@file isalpha.c
+@file main.c
 
 @brief C Development Environment (CDE)\n
-    Validation of the <em>isalpha()</em>-function from the standard C library
+    Validation of the <em>iscntrl()</em>-function from the standard C library
     
 
 @details 
@@ -23,7 +23,7 @@
 @todo
 
 @mainpage
-    isalpha() validation driver for PEI
+    iscntrl() validation driver for PEI
 
 @section intro_sec Introduction
     Validation of the <em>clock()</em>-function from the standard C library.
@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     //__debugbreak();
 
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
-    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "########################## Test isalpha() in PEI #################\n"));
+    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "########################## Test iscntrl() in PEI #################\n"));
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
 //
 // get command line parameter
@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
 
     for (c = 0; c < count; c++) {
 
-        result = isalpha(c);
+        result = iscntrl(c);
 
         sprintf(buffer, "%s%s%s%s%s%s%s%s",
             (result & _UPPER) ? "_UPPER " : "",
@@ -84,7 +84,7 @@ int main(int argc, char** argv) {
             (result & _BLANK) ? "_BLANK " : "",
             (result & _HEX) ? "_HEX " : "");
 
-        CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "isalpha(0x%04X) -> %s\n",c,buffer));
+        CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "iscntrl(0x%04X) -> %s\n",c,buffer));
 
     }
     CDEMOFINE/*MOduleFIleliNE*/((MFNBAR(1) "\n"));

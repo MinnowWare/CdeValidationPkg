@@ -1,8 +1,7 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = isalnumPei
-  MODULE_UNI_FILE                = isalnumPei.uni
-  FILE_GUID                      = CDE000FF-6EFF-485A-9F7B-890B47D41F2D
+  BASE_NAME                      = toupperPei
+  FILE_GUID                      = CDE000FF-2399-40C7-8875-CD76F328C1D0
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = _MainEntryPointPei
@@ -14,7 +13,7 @@
 #
 
 [Sources]
-	isalnum.c
+	main.c
 
 [Packages]
 	MdePkg/MdePkg.dec
@@ -34,7 +33,10 @@
 [Depex]
     gCdePeiProtocolGuid
 
-[UserExtensions.TianoCore."ExtraFiles"]
-
 [Pcd]
 	gCdePkgTokenSpaceGuid.CdeDefaultCommandLine		## CONSUMES
+
+[BuildOptions] 
+#to ENABLE  CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
+#to DISABLE CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
+   MSFT:*_*_*_CC_FLAGS    = /D_invalid_switch_NMOFINE 

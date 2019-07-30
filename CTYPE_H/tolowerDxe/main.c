@@ -12,10 +12,10 @@
     THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
     WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-@file isalpha.c
+@file main.c
 
 @brief C Development Environment (CDE)\n
-    Validation of the <em>isalpha()</em>-function from the standard C library
+    Validation of the <em>tolower()</em>-function from the standard C library
     
 
 @details 
@@ -23,10 +23,10 @@
 @todo
 
 @mainpage
-    clock() validation driver for PEI
+    tolower() validation driver for DXE
 
 @section intro_sec Introduction
-    Validation of the <em>clock()</em>-function from the standard C library.
+    Validation of the <em>tolower()</em>-function from the standard C library.
 
 @subsection ref_sec References
     <a href="https://www.pdf-archive.com/2014/10/02/ansi-iso-9899-1990-1/ansi-iso-9899-1990-1.pdf">ANSI C Specification</a>\n
@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     //__debugbreak();
 
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
-    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "########################## Test isalpha() in DXE #################\n"));
+    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "########################## Test tolower() in DXE #################\n"));
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
 //
 // get command line parameter
@@ -68,23 +68,13 @@ int main(int argc, char** argv) {
     }
 
     sprintf(buffer, "%d %s %s %s %s %s\n", argc, argv[0], argv[1], argv[2], argv[3], argv[4]);
-    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "%s\n", buffer));
+    CDEMOFINE/*MOdule FIle liNE*/((MFNINF(1) "%s\n", buffer));
 
     for (c = 0; c < count; c++) {
 
-        result = isalpha(c);
+        result = tolower(c);
 
-        sprintf(buffer, "%s%s%s%s%s%s%s%s",
-            (result & _UPPER) ? "_UPPER " : "",
-            (result & _LOWER) ? "_LOWER " : "",
-            (result & _DIGIT) ? "_DIGIT " : "",
-            (result & _SPACE) ? "_SPACE " : "",
-            (result & _PUNCT) ? "_PUNCT " : "",
-            (result & _CONTROL) ? "_CONTROL " : "",
-            (result & _BLANK) ? "_BLANK " : "",
-            (result & _HEX) ? "_HEX " : "");
-
-        CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "isalpha(0x%04X) -> %s\n",c,buffer));
+        CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "  %04X ---(tolower)---> %04X\n",c,result));
 
     }
     CDEMOFINE/*MOduleFIleliNE*/((MFNBAR(1) "\n"));

@@ -12,7 +12,7 @@
     THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
     WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-@file isalpha.c
+@file main.c
 
 @brief C Development Environment (CDE)\n
     Validation of the <em>isdigit()</em>-function from the standard C library
@@ -23,7 +23,7 @@
 @todo
 
 @mainpage
-    clock() validation driver for PEI
+    isdigit() validation driver for PEI
 
 @section intro_sec Introduction
     Validation of the <em>clock()</em>-function from the standard C library.
