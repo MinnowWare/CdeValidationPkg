@@ -49,10 +49,25 @@
 
 int main(int argc, char** argv) {
     int i,c,result;
-    char buffer[64];
+    static char buffer[512];
     int count = COUNT;                  // default 0x100
-    //__debugbreak();
+#ifdef WIN64BUILD
+    for (i = 0; i < argc; i++) {
+        int fDebug = 0;
 
+        fDebug = 0 == strcmp("/debug", argv[i]);
+
+        if (1 == fDebug) {
+            printf("1. Start Visual Studio\n");
+            printf("2. Select MENU->DEBUG->ATTACH TO PROCESS or ALT+CTRL+P\n");
+            printf("3. Select the process to be debugged (this particular executable)\n");
+            printf("4. go back to the processes command line window and:\n");
+            printf("press any key...");
+            getchar();
+            __debugbreak();
+        }
+    }
+#endif// WIN64BUILD
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "########################## Test isalpha() in PEI #################\n"));
     CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "##################################################################\n"));
@@ -67,8 +82,16 @@ int main(int argc, char** argv) {
 
     }
 
-    sprintf(buffer, "%d %s %s %s %s %s\n", argc, argv[0], argv[1], argv[2], argv[3], argv[4]);
-    CDEMOFINE/*MOduleFIleliNE*/((MFNINF(1) "%s\n", buffer));
+    memset(buffer, 0, sizeof(buffer));
+    sprintf(buffer, "argc = %d, ", argc);
+    for (i = 0; i < argc; i++) {
+        sprintf(&buffer[strlen(buffer)], "argv[%d] = %s, ", i, argv[i]);
+    }
+
+    buffer[strlen(buffer) - 2] = '\0';          // kill last ', '
+
+
+    CDEMOFINE((MFNINF(1) "%s\n", buffer));
 
     for (c = 0; c < count; c++) {
 

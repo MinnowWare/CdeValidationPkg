@@ -53,10 +53,25 @@ int main(int argc, char** argv) {
     int i;
     long count = COUNT;
     long frq = FRQ;
-    char buffer[64];
+    char buffer[256];
 
-    //__debugbreak();
+#ifdef WIN64BUILD
+    for (i = 0; i < argc; i++) {
+        int fDebug = 0;
 
+        fDebug = 0 == strcmp("/debug", argv[i]);
+
+        if (1 == fDebug) {
+            printf("1. Start Visual Studio\n");
+            printf("2. Select MENU->DEBUG->ATTACH TO PROCESS or ALT+CTRL+P\n");
+            printf("3. Select the process to be debugged (this particular executable)\n");
+            printf("4. go back to the processes command line window and:\n");
+            printf("press any key...");
+            getchar();
+            __debugbreak();
+        }
+    }
+#endif// WIN64BUILD
     CDEMOFINE((MFNINF(1) "##################################################################\n"));
     CDEMOFINE((MFNINF(1) "########################## Test clock() ##########################\n"));
     CDEMOFINE((MFNINF(1) "##################################################################\n"));
@@ -75,7 +90,15 @@ int main(int argc, char** argv) {
 
     }
 
-    sprintf(buffer, "%d %s %s %s %s %s\n", argc, argv[0], argv[1], argv[2], argv[3], argv[4]);
+    memset(buffer, 0, sizeof(buffer));
+    sprintf(buffer, "argc = %d, ", argc);
+    for (i = 0; i < argc; i++) {
+        sprintf(&buffer[strlen(buffer)], "argv[%d] = %s, ", i, argv[i]);
+    }
+
+    buffer[strlen(buffer) - 2] = '\0';          // kill last ', '
+
+
     CDEMOFINE((MFNINF(1) "%s\n", buffer));
 
     for (i = 0; i < count; i++) {

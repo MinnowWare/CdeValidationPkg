@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="WinNTx86-64 (Microsoft C Library)|Win32">
       <Configuration>WinNTx86-64 (Microsoft C Library)</Configuration>
@@ -18,12 +18,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_CdeMofine.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CdePkg\Include\CDE.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{90ffc688-a294-4210-81ac-456e17b619a9}</ProjectGuid>
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{E49B7546-C2D5-44BF-802F-83B51E52BA3D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>tolowerDxe</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <RootNamespace>CdeMofineLibrary</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Microsoft C Library)|Win32'">
@@ -31,12 +37,14 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Microsoft C Library)|x64'">
     <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Torito C Library)|Win32'">
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Torito C Library)|x64'">
     <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -45,22 +53,18 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Microsoft C Library)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\build\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Torito C Library)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\build\$(Platform)\$(Configuration)\</OutDir>
-    <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Microsoft C Library)|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Edk2\CdePkg\Include;$(SolutionDir)Edk2\MdePkg\Include;$(SolutionDir)Edk2\MdePkg\Include\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Edk2\CdePkg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)Edk2\CdeValidationPkg\Library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>_CdeMofine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(SolutionDir)Edk2\CdeValidationPkg\build\$(Platform)\$(Configuration)\$(TargetName).map</MapFileName>
-    </Link>
+    <Lib>
+      <OutputFile>$(OutDir)_CdeMofine$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinNTx86-64 (Torito C Library)|x64'">
     <ClCompile>
@@ -71,35 +75,23 @@
     <ClCompile>
       <DebugInformationFormat>None</DebugInformationFormat>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE</PreprocessorDefinitions>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
       <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
       <CompileAs>CompileAsC</CompileAs>
-      <AdditionalOptions>/D_NO_CRT_STDIO_INLINE %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Edk2\CdeValidationPkg\Library;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>toritoc64R.lib;_CdeMofine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>toritoc64R.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <MapFileName>$(SolutionDir)Edk2\CdeValidationPkg\build\$(Platform)\$(Configuration)\$(TargetName).map</MapFileName>
-      <SubSystem>Console</SubSystem>
-      <EntryPointSymbol>_MainEntryPointWinNT</EntryPointSymbol>
-      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <GenerateMapFile>true</GenerateMapFile>
     </Link>
+    <Lib>
+      <OutputFile>$(OutDir)_CdeMofine$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\CdePkg\Include\CDE.h" />
-    <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h" />
-    <ClInclude Include="..\..\..\CdePkg\Include\VS2017\ctype.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="build.inf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
