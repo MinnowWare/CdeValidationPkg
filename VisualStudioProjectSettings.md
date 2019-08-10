@@ -1,4 +1,4 @@
-Visual Studio Configuration for the x64 Platform
+## Visual Studio Configuration for the x64 Platform
 <table>
         <tr>
             <td></td>
@@ -26,8 +26,20 @@ Visual Studio Configuration for the x64 Platform
             <td align="center" colspan="5">$(SolutionDir)Edk2\CdePkg\include;</td>
         </tr>
         <tr>
-            <td>Debug Format</td>
+            <td>Debug Information Format</td>
             <td align="center" colspan="5">None</td>
+        </tr>
+        <tr>
+            <td>Support Just My Code Debugging</td>
+            <td align="center" colspan="5">No</td>
+        </tr>
+        <tr>
+            <td>Warning Level</td>
+            <td align="center" colspan="5">Level3 (/W3)</td>
+        </tr>
+        <tr>
+            <td>Treat Warnings As Errors</td>
+            <td align="center" colspan="5">Yes (/WX)</td>
         </tr>
         <tr>
             <td>Optimization</td>
@@ -35,7 +47,7 @@ Visual Studio Configuration for the x64 Platform
         </tr>
         <tr>
             <td>Preprocessor Definitions</td>
-            <td align="center" colspan="5">_NO_CRT_STDIO_INLINE;<br>CDE_DRIVER_NAME="$(TargetName)";</td>
+            <td align="center" colspan="5">_NO_CRT_STDIO_INLINE;<br>_CRT_SECURE_NO_WARNINGS;<br> CDE_DRIVER_NAME="$(TargetName)";</td>
         </tr>
         <tr><td>Enable String Pooling</td><td align="center" colspan="5">Yes /GF</td></tr>
         <tr><td>Enable C++ Exceptions</td><td align="center" colspan="5">No</td></tr>
@@ -47,6 +59,7 @@ Visual Studio Configuration for the x64 Platform
         <tr><td>Precompiled Headers</td><td align="center" colspan="5">No</td></tr>
         <tr><td>calling conventions</td><td align="center" colspan="5">__cdecl(/Gd)</td></tr>
         <tr><td>compile as</td><td align="center" colspan="5">/TC</td></tr>
+        <tr><td>Use Full Paths</td><td align="center" colspan="5">No</td></tr>
         <tr><td><th align="center" colspan="5"> <h2>Linker settings</h2></th> </td></tr>
         <tr><td>Output File</td><td align="center" colspan="5">$(OutDir)$(TargetName)$(TargetExt)</td></td></tr>
        <tr><td>Additional Library Directory</td><td align="center" colspan="5">$(SolutionDir)Edk2\CdeValidationPkg\Library\;<br>$(SolutionDir)Edk2\CdePkg\CdeLib\x64\;</td></tr>
