@@ -1,8 +1,7 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = clockPei
-  MODULE_UNI_FILE                = clockPei.uni
-  FILE_GUID                      = CDE000FF-A2C0-4C76-82D5-F0206EA53289
+  BASE_NAME                      = wctypeALLPei
+  FILE_GUID                      = CDE000FF-A950-4A0E-B9AD-D25E524456D2
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = _MainEntryPointPei
@@ -10,7 +9,7 @@
 #
 # The following information is for reference only and not required by the build tools.
 #
-#  VALID_ARCHITECTURES           = X64
+#  VALID_ARCHITECTURES           = IA32
 #
 
 [Sources]
@@ -33,8 +32,6 @@
 
 [Depex]
     gCdePeiProtocolGuid
-
-[UserExtensions.TianoCore."ExtraFiles"]
 
 [Pcd]
 	gCdePkgTokenSpaceGuid.CdeDefaultCommandLine		## CONSUMES

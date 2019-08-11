@@ -24,8 +24,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3cad3e94-7d01-437d-8a02-9a56a28cbdda}</ProjectGuid>
-    <RootNamespace>clockPEI</RootNamespace>
+    <ProjectGuid>{c69256c0-e2e8-4029-bf5b-f6b014d3840c}</ProjectGuid>
+    <RootNamespace>ctypeALLPei</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -14,7 +14,7 @@
 #
 
 [Sources]
-	clock.c
+	main.c
 
 [Packages]
 	MdePkg/MdePkg.dec

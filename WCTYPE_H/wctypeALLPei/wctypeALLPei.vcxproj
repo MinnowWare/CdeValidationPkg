@@ -24,8 +24,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3cad3e94-7d01-437d-8a02-9a56a28cbdda}</ProjectGuid>
-    <RootNamespace>clockPEI</RootNamespace>
+    <ProjectGuid>{bf53179b-f958-4917-a9dc-e0d50fadbfc1}</ProjectGuid>
+    <RootNamespace>wctypeALLPei</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -255,6 +255,9 @@
   <ItemGroup>
     <ClCompile Include="EfiCallerBaseName.c" />
     <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\CdePkg\Include\CdeLoadOptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
