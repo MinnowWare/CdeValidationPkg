@@ -12,7 +12,7 @@
     THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
     WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-@file clockDxe.c
+@file clock.c
 
 @brief C Development Environment (CDE)\n
     Validation of the <em>clock()</em>-function from the standard C library
@@ -23,7 +23,7 @@
 @todo
 
 @mainpage
-    clock() validation driver for DXE
+    clock() validation driver
 
 @section intro_sec Introduction
     Validation of the <em>clock()</em>-function from the standard C library.
@@ -58,25 +58,8 @@ int main(int argc, char** argv) {
     long frq = FRQ;
     char buffer[256];
 
-#ifdef WIN64DEBUGBUILD
-    for (i = 0; i < argc; i++) {
-        int fDebug = 0;
-
-        fDebug = 0 == strcmp("/debug", argv[i]);
-
-        if (1 == fDebug) {
-            printf("1. Start Visual Studio\n");
-            printf("2. Select MENU->DEBUG->ATTACH TO PROCESS or ALT+CTRL+P\n");
-            printf("3. Select the process to be debugged (this particular executable)\n");
-            printf("4. go back to the processes command line window and:\n");
-            printf("press any key...");
-            getchar();
-            __debugbreak();
-        }
-    }
-#endif// WIN64DEBUGBUILD
     CDEMOFINE((MFNINF(1) "##################################################################\n"));
-    CDEMOFINE((MFNINF(1) "########################## Test clock() ##########################\n"));
+    CDEMOFINE((MFNINF(1) "########################## Test clock() in %s %s\n", CDE_CONFIGURATION_STRING, CDE_PLATFORM_STRING));
     CDEMOFINE((MFNINF(1) "##################################################################\n"));
 
     for (i = 0; i < argc; i++) {

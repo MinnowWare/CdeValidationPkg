@@ -1,7 +1,8 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = ctypeALLPei
-  FILE_GUID                      = CDE000FF-38C6-4B8D-A1E3-B59A3FC2361D
+  BASE_NAME                      = clockPei
+  MODULE_UNI_FILE                = clockPei.uni
+  FILE_GUID                      = CDE000FF-A2C0-4C76-82D5-F0206EA53289
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = _MainEntryPointPei
@@ -33,10 +34,13 @@
 [Depex]
     gCdePeiProtocolGuid
 
+[UserExtensions.TianoCore."ExtraFiles"]
+
 [Pcd]
 	gCdePkgTokenSpaceGuid.CdeDefaultCommandLine		## CONSUMES
 
 [BuildOptions] 
 #to ENABLE  CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
 #to DISABLE CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
-   MSFT:*_*_*_CC_FLAGS    = /D_invalid_switch_NMOFINE 
+   MSFT:*_*_IA32_CC_FLAGS   = /D_invalid_switch_NMOFINE /D "CDE_CONFIGURATION_STRING=\"EDK2 UEFI PEI(CdeLib)\"" /D "CDE_PLATFORM_STRING=\"x86-32\""
+   MSFT:*_*_X64_CC_FLAGS    = /D_invalid_switch_NMOFINE /D "CDE_CONFIGURATION_STRING=\"EDK2 UEFI PEI(CdeLib)\"" /D "CDE_PLATFORM_STRING=\"x86-64\""

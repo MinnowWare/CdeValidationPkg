@@ -1,7 +1,7 @@
 [Defines]
   INF_VERSION                    = 1.26
-  BASE_NAME                      = ctypeALLDxe
-  FILE_GUID                      = CDE000FF-A3A6-4F7A-B16C-123708FB4DCD
+  BASE_NAME                      = wctypeALLDxe
+  FILE_GUID                      = CDE000FF-BA1D-49EF-B999-AAA652D11474
   MODULE_TYPE                    = DXE_DRIVER
   VERSION_STRING                 = 1.0
   ENTRY_POINT                    = _MainEntryPointDxe
@@ -41,4 +41,5 @@
 [BuildOptions] 
 #to ENABLE  CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
 #to DISABLE CDEMOFINE MOdule FIle liNE traces: /DNMOFINE 
-   MSFT:*_*_*_CC_FLAGS    = /D_invalid_switch_NMOFINE 
+   MSFT:*_*_IA32_CC_FLAGS   = /D_invalid_switch_NMOFINE /D "CDE_CONFIGURATION_STRING=\"EDK2 UEFI DXE(CdeLib)\"" /D "CDE_PLATFORM_STRING=\"x86-32\""
+   MSFT:*_*_X64_CC_FLAGS    = /D_invalid_switch_NMOFINE /D "CDE_CONFIGURATION_STRING=\"EDK2 UEFI DXE(CdeLib)\"" /D "CDE_PLATFORM_STRING=\"x86-64\""
