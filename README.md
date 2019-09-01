@@ -14,11 +14,14 @@ demonstrated.
 
 ## Intention
 The concept for this validation suite is to:
-    1.  Create test programs that can be build for Windows NT (with Microsofts libcmt.lib), UEFI DXE, SMM, PEI (with CdePkg CdeLib) and 
+
+1.  Create test programs that can be build for Windows NT (with Microsofts libcmt.lib), UEFI DXE, SMM, PEI (with CdePkg CdeLib) and 
         SHELL (with Torito C Library) out of the same source code.
-    2.  Test status messages are written using a commonly used trace interface `CDEMOFINE` to 
+
+2.  Test status messages are written using a commonly used trace interface `CDEMOFINE` to 
         `stdout` (WinNT and UEFI SHELL) or to the StatusCode interface / COM1 at 115200,n,8,1.
-    3.  Capture the trace messages for POST drivers (terminal program or log window of the emulator). 
+    
+3.  Capture the trace messages for POST drivers (terminal program or log window of the emulator). 
         Capture the trace messages from the same source module compiled as Windows NT executable (linked against libcmt.lib)
         by redirecting to `stdout` as reference traces.
         Compare both trace logs to verify equality of the **CdeLib** / **Torito C** functions and the 
@@ -29,9 +32,12 @@ transmission rate of the trace messages is too slow.
 
 ## Implementation
 Each single VS2019 projects / EDK2 components can be build in:
-    1. Visual Studio 2019 using the Platform Toolset v141 (VS2017)
-    2. in the EDK2 Emulation Build (NT32Pkg)
-    3. in the EDK2 MinnowBoard Build (Vlv2TbltDevicePkg)
+
+1. Visual Studio 2019 using the Platform Toolset v141 (VS2017)
+
+2. in the EDK2 Emulation Build (NT32Pkg)
+
+3. in the EDK2 MinnowBoard Build (Vlv2TbltDevicePkg)
 
 ## Known bugs
 * Torito C Library based programs can not build in 32Bit mode because Torito C is for x86-64
