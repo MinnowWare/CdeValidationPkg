@@ -18,7 +18,7 @@ The concept for this validation suite is to:
 1.  Create test programs that can be build for Windows NT (with Microsofts libcmt.lib), UEFI DXE, SMM, PEI (with CdePkg CdeLib) and 
         SHELL (with Torito C Library) out of the same source code.
 
-2.  Test status messages are written using a commonly used trace interface `CDEMOFINE` to 
+2.  Test status messages are written using a commonly used trace interface [`CDEMOFINE`](https://github.com/MinnowWare/CdePkg/blob/master/Include/CDE.h#L56) to 
         `stdout` (WinNT and UEFI SHELL) or to the StatusCode interface / COM1 at 115200,n,8,1 baud.
     
 3.  Capture the trace messages for POST drivers (terminal program or log window of the emulator). 
