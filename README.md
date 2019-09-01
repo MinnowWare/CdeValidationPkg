@@ -19,7 +19,7 @@ The concept for this validation suite is to:
         SHELL (with Torito C Library) out of the same source code.
 
 2.  Test status messages are written using a commonly used trace interface `CDEMOFINE` to 
-        `stdout` (WinNT and UEFI SHELL) or to the StatusCode interface / COM1 at 115200,n,8,1.
+        `stdout` (WinNT and UEFI SHELL) or to the StatusCode interface / COM1 at 115200,n,8,1 baud.
     
 3.  Capture the trace messages for POST drivers (terminal program or log window of the emulator). 
         Capture the trace messages from the same source module compiled as Windows NT executable (linked against libcmt.lib)
