@@ -3,7 +3,7 @@ C Development Environment Validation Package for EDK2
 
 ## Introduction
 **CdeValidationPkg** is the environment for unit tests  of each single ANSI C library function
-implemented and provided to other POST drivers in the [**CdePkg**](https://github.com/MinnowWare/CdePkg/blob/master/README.md)
+implemented and provided to other POST drivers in the [**CdePkg**](https://github.com/MinnowWare/CdePkg/blob/master/README.md#cdepkg)
 
 The [completion list ](https://github.com/MinnowWare/CdePkg/blob/master/implemented.md) is updated
 by the results of those unit tests.
