@@ -9,7 +9,7 @@ The [completion list ](https://github.com/MinnowWare/CdePkg/blob/master/implemen
 by the results of those unit tests.
 
 Furthermore the concept of passing the `EFI_PEI_FILE_HANDLE*` and `EFI_PEI_SERVICES**` parameter to PEI
-modules `main()` entry point respective `EFI_HANDLE` and EFI_SYSTEM_TABLE*` for DXE modules `main()` entry point is
+modules `main()` entry point respective `EFI_HANDLE` and `EFI_SYSTEM_TABLE*` for DXE modules `main()` entry point is
 demonstrated.
 
 ## Intention
