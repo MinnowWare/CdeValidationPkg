@@ -18,7 +18,7 @@ The intent of this validation suite is to:
 1.  create test programs that can be built for Windows NT (with Microsofts libcmt.lib), UEFI DXE, SMM, PEI (with CdePkg CdeLib) and 
         SHELL (with Torito C Library) out of the same source code.
 
-2.  test status messages are written using a commonly used trace interface [`CDEMOFINE`](https://github.com/MinnowWare/CdePkg/blob/master/Include/CDE.h#L56) to 
+2.  issue test status messages utilizing a commonly used trace interface [`CDEMOFINE`](https://github.com/MinnowWare/CdePkg/blob/master/Include/CDE.h#L56) to 
         `stdout` (WinNT and UEFI SHELL) or to the StatusCode interface / COM1 at 115200,n,8,1 baud.
     
 3.  Capture the trace messages for POST drivers (terminal program or log window of the emulator). 
@@ -31,20 +31,20 @@ The tests are kept simple and quick. A comprehensive validation can not be done 
 transmission rate of the trace messages is too slow.
 
 ## Implementation
-Each single VS2019 projects / EDK2 components can be build in:
+Each of the VS2019 projects / EDK2 components can be built in:
 
 1. Visual Studio 2019 using the Platform Toolset v141 (VS2017)
 
-2. in the EDK2 Emulation Build (NT32Pkg)
+2. the EDK2 Emulation Build (NT32Pkg)
 
-3. in the EDK2 MinnowBoard Build (Vlv2TbltDevicePkg)
+3. the EDK2 MinnowBoard Build (Vlv2TbltDevicePkg)
 
 ## Known bugs
 * Torito C Library based programs can not build in 32Bit mode because Torito C is for x86-64
   mode only
 
 ### 20190822
-* reoranization of build strategy: use CDE_CONFIGURATION_STRING=SOLUTIONCONIG and 
+* reorganization of build strategy: use CDE_CONFIGURATION_STRING=SOLUTIONCONIG and 
   CDE_PLATFORM_STRING=PLATFORM preprocessor settings passed by the compiler
   to differentiate executables. Reduce number of projects to one single project
   for all platforms (NT(Microsoft C Library), NT(Torito C Library), UEFI DXE(CdeLib)
