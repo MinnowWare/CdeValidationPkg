@@ -43,6 +43,7 @@ Each of the VS2019 projects / EDK2 components can be built in:
 * Torito C Library based programs can not build in 32Bit mode because Torito C is for x86-64
   mode only
 
+## Revision history
 ### 20190822
 * reorganization of build strategy: use CDE_CONFIGURATION_STRING=SOLUTIONCONIG and 
   CDE_PLATFORM_STRING=PLATFORM preprocessor settings passed by the compiler
