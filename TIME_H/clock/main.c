@@ -12,28 +12,49 @@
     THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
     WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
-@file clock.c
+@file main.c
 
-@brief C Development Environment (CDE)\n
-    Validation of the <em>clock()</em>-function from the standard C library
-
-
-@details
-
+@brief 
+    This module implements unit test for the <em>time.h / clock()</em> function
 @todo
 
 @mainpage
     clock() validation driver
 
 @section intro_sec Introduction
-    Validation of the <em>clock()</em>-function from the standard C library.
+    Validation of the <em>clock()</em>-function from the standard C library.<br><br>
+    <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/clock?view=vs-2019">clock_t clock(void)</a>\n
+
+@subsection Drv_sec Driver and Application matrix
+    <table>
+                <tr>
+                    <Th></th>
+                    <Th>PEI</th>
+                    <Th>DXE</th>
+                    <Th>Windows</th>
+                 </tr>
+                <tr><th>NAME</th>
+                    <TD>clockPei.efi</td>
+                    <TD>clockDxe.efi</td>
+                    <TD>clock.exe</td>
+                </tr>
+                <tr><th>GUID</th>
+                    <TD>CDE000FF-A2C0-4C76-82D5-F0206EA53289</td>
+                    <TD>CDE000FF-FBBA-4AA6-B1C2-9701038905B2</td>
+                    <TD>n/a</td></tr>
+                <tr>
+                    <th>parameter</th>
+                    <td colspan="3">/frq <em>frequency</em> : print "." at <em>frequency</em>, NOTE: frequency <= CLOCKS_PER_SEC</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td colspan="3">/count <em>count</em> : <em>count</em> of "."</td></tr>
+                </tr>
+    </table>
 
 @subsection ref_sec References
     <a href="https://www.pdf-archive.com/2014/10/02/ansi-iso-9899-1990-1/ansi-iso-9899-1990-1.pdf">ANSI C Specification</a>\n
-    <a href="https://github.com/JoaquinConoBolillo/torito-C-Library/blob/master/implemented.md">functions supported in CdeLib</a>\n
-    <a href="https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=vs-2019">Microsoft C Language Reference</a>\n
-    <a href="https://minnowboard.org/compare-boards/">MinnowBoard</a>\n
-    @image html StdCLibCover.jpg
+
 
 @subsection Parm_sec Command line parameters
 */

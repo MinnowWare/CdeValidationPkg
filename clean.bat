@@ -19,4 +19,6 @@ for /F "delims=" %%a in ('dir /s /AD /b "NT(Torito C Library)"') do echo "%%a" &
 for /F "delims=" %%a in ('dir /s /AD /b "UEFI PEI(CdeLib)"') do echo "%%a" & rd /s /q "%%a"
 for /F "delims=" %%a in ('dir /s /AD /b "UEFI SHELL(Torito C Library)"') do echo "%%a" & rd /s /q "%%a"
 
+for /F "delims=" %%a in ('dir /s /AD /b "doxygen.tmp"') do echo "%%a" & rd /s /q "%%a"
+
 ping 127.0.0.0 > nul

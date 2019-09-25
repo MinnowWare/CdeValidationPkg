@@ -14,13 +14,64 @@
 
 @file main.c
 
-@brief C Development Environment (CDE)\n
-    Validation of all <em>Wctype.h</em>-functions from the standard C library
-
-
-@details
-
+@brief
+    This module implements unit test for all <em>wctype.h</em> functions
 @todo
+
+@mainpage
+    Unit test for all <em>wctype.h</em> functions<br>
+
+    This are:<br>
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l?view=vs-2019">int iswalnum(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isalpha-iswalpha-isalpha-l-iswalpha-l?view=vs-2019">int iswalpha(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l?view=vs-2019">int iswblank(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/iscntrl-iswcntrl-iscntrl-l-iswcntrl-l?view=vs-2019">int iswcntrl(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isdigit-iswdigit-isdigit-l-iswdigit-l?view=vs-2019">int iswdigit(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isgraph-iswgraph-isgraph-l-iswgraph-l?view=vs-2019">int iswgraph(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/islower-iswlower-islower-l-iswlower-l?view=vs-2019">int iswlower(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l?view=vs-2019">int iswprint(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l?view=vs-2019">int iswpunct(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isspace-iswspace-isspace-l-iswspace-l?view=vs-2019">int iswspace(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l?view=vs-2019">int iswupper(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isxdigit-iswxdigit-isxdigit-l-iswxdigit-l?view=vs-2019">int iswxdigit(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/isctype-iswctype-isctype-l-iswctype-l?view=vs-2019">int iswctype(wint_t wc, wctype_t desc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/wctype?view=vs-2019">wctype_t wctype(const char *property)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tolower-tolower-towlower-tolower-l-towlower-l?view=vs-2019">wint_t towlower(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/toupper-toupper-towupper-toupper-l-towupper-l?view=vs-2019">wint_t towupper(wint_t wc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/towctrans?view=vs-2019">wint_t towctrans(wint_t wc, wctrans_t desc)</a>\n
+        <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/wctrans?view=vs-2019">wctrans_t wctrans(const char *property)</a>\n
+
+@section intro_sec Introduction
+    This program / driver validates all <em>wctype.h</em> functions.
+
+@subsection Drv_sec Driver and Application matrix
+    <table>
+                <tr>
+                    <Th></th>
+                    <Th>PEI</th>
+                    <Th>DXE</th>
+                    <Th>Windows</th>
+                 </tr>
+                <tr><th>NAME</th>
+                    <TD>wctypeALLPei.efi</td>
+                    <TD>wctypeALLDxe.efi</td>
+                    <TD>wctype.exe</td>
+                </tr>
+                <tr><th>GUID</th>
+                    <TD>CDE000FF-A950-4A0E-B9AD-D25E524456D2</td>
+                    <TD>CDE000FF-BA1D-49EF-B999-AAA652D11474</td>
+                    <TD>n/a</td></tr>
+                <tr>
+                    <th>parameter</th>
+                    <td colspan="3">/count <em>num</em> : test <em>num</em> ASCII characters</td></tr>
+    </table>
+
+@subsection ref_sec References
+    <a href="https://www.pdf-archive.com/2014/10/02/ansi-iso-9899-1990-1/ansi-iso-9899-1990-1.pdf">ANSI C Specification</a>\n
+
+@subsection Parm_sec Command line parameters
+    1. wctype /count 256: count of ASCII characters starting from 0 to test
+
 
 */
 
