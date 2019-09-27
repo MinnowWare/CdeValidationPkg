@@ -53,42 +53,52 @@
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='NT(Microsoft C Library)|x64'">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NT(Microsoft C Library)|Win32'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='NT(Torito C Library)|x64'">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NT(Torito C Library)|Win32'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='UEFI SHELL(Torito C Library)|x64'">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI SHELL(Torito C Library)|Win32'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='UEFI DXE(CdeLib)|x64'">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI DXE(CdeLib)|Win32'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='UEFI PEI(CdeLib)|x64'">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI PEI(CdeLib)|Win32'" Label="Configuration">
     <PlatformToolset>v141</PlatformToolset>
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <SpectreMitigation>false</SpectreMitigation>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -97,7 +107,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI DXE(CdeLib)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <TargetName>_CdeMofine64</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
@@ -107,23 +117,23 @@
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NT(Torito C Library)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <TargetName>_CdeMofine64</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NT(Torito C Library)|Win32'">
     <TargetName>_CdeMofine32</TargetName>
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI PEI(CdeLib)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <TargetName>_CdeMofine64</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI SHELL(Torito C Library)|x64'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <TargetName>_CdeMofine64</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
@@ -134,19 +144,19 @@
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI DXE(CdeLib)|Win32'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>_CdeMofine32</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI PEI(CdeLib)|Win32'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>_CdeMofine32</TargetName>
     <TargetExt>.LIB</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UEFI SHELL(Torito C Library)|Win32'">
-    <OutDir>$(SolutionDir)Edk2\CdeValidationPkg\library\</OutDir>
+    <OutDir>$(SolutionDir)CdeValidationPkg\library\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <TargetName>_CdeMofine32</TargetName>
     <TargetExt>.LIB</TargetExt>
@@ -173,6 +183,8 @@
       <PrecompiledHeaderFile />
       <PrecompiledHeaderOutputFile />
       <CompileAs>CompileAsC</CompileAs>
+      <OmitFramePointers>false</OmitFramePointers>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine64$(TargetExt)</OutputFile>
@@ -192,6 +204,7 @@
       <PrecompiledHeaderOutputFile>
       </PrecompiledHeaderOutputFile>
       <CompileAs>CompileAsC</CompileAs>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine32$(TargetExt)</OutputFile>
@@ -207,6 +220,8 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
+      <OmitFramePointers>false</OmitFramePointers>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine64$(TargetExt)</OutputFile>
@@ -221,6 +236,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine32$(TargetExt)</OutputFile>
@@ -236,6 +252,8 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine64$(TargetExt)</OutputFile>
@@ -250,6 +268,7 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine32$(TargetExt)</OutputFile>
@@ -265,6 +284,8 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine64$(TargetExt)</OutputFile>
@@ -279,6 +300,7 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine32$(TargetExt)</OutputFile>
@@ -312,6 +334,8 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <OmitFramePointers>false</OmitFramePointers>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine64$(TargetExt)</OutputFile>
@@ -324,6 +348,7 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>MinSpace</Optimization>
       <PreprocessorDefinitions>_NO_CRT_STDIO_INLINE;</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)_CdeMofine32$(TargetExt)</OutputFile>
